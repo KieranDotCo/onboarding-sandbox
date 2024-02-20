@@ -18,7 +18,7 @@ export const titleMachine = createMachine(
             actions: assign({
               titleAdded: false,
               aiEntered: false,
-              selectedAi: false
+              selectedAi: false,
             }),
           },
           TitleAdded: {
@@ -27,13 +27,21 @@ export const titleMachine = createMachine(
             }),
           },
           EnteredAI: {
-            actions: assign({
-              aiEntered: true,
+            actions: assign(({ context }) => {
+              if (context.titleAdded) {
+                return {
+                  aiEntered: true,
+                };
+              }
             }),
           },
           SelectedAI: {
-            actions: assign({
-              selectedAi: true,
+            actions: assign(({ context }) => {
+              if (context.aiEntered) {
+                return {
+                  selectedAi: true,
+                };
+              }
             }),
           },
         },
