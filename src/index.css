@@ -12,3 +12,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.ta-center {
+  text-align: center;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.pl1 {
+  padding-left: 1rem;
+}
+
+.pr1 {
+  padding-right: 1rem;
+}
+
+.task-list {
+  list-style-type: none;
+}
+
+.task-list .task-completed:before {
+  content: '✓';
+}
